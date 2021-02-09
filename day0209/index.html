@@ -1,0 +1,1290 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142564850-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-142564850-1');
+  </script>
+  <!-- /Global site tag (gtag.js) - Google Analytics -->
+  
+  <meta charset="utf-8">
+	
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+
+
+
+<title>Pythonの便利な神ライブラリ17選  |  ハシカケ-実現したいことから学べるプログラミングサイト</title>
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//js.stripe.com' />
+<link rel='dns-prefetch' href='//checkout.stripe.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="ハシカケ-実現したいことから学べるプログラミングサイト &raquo; フィード" href="https://hashikake.com/?feed=rss2" />
+<link rel="alternate" type="application/rss+xml" title="ハシカケ-実現したいことから学べるプログラミングサイト &raquo; コメントフィード" href="https://hashikake.com/?feed=comments-rss2" />
+<link rel="alternate" type="application/rss+xml" title="ハシカケ-実現したいことから学べるプログラミングサイト &raquo; Pythonの便利な神ライブラリ17選 のコメントのフィード" href="https://hashikake.com/?feed=rss2&#038;p=1669" />
+<link rel='stylesheet' id='cocoon-style-css'  href='https://hashikake.com/wp-content/themes/cocoon-master/style.css?ver=5.3.6&#038;fver=20200429044236' media='all' />
+<link rel='stylesheet' id='cocoon-keyframes-css'  href='https://hashikake.com/wp-content/themes/cocoon-master/keyframes.css?ver=5.3.6&#038;fver=20190619020607' media='all' />
+<link rel='stylesheet' id='font-awesome-style-css'  href='https://hashikake.com/wp-content/themes/cocoon-master/webfonts/fontawesome/css/font-awesome.min.css?ver=5.3.6&#038;fver=20190619020607' media='all' />
+<link rel='stylesheet' id='icomoon-style-css'  href='https://hashikake.com/wp-content/themes/cocoon-master/webfonts/icomoon/style.css?ver=5.3.6&#038;fver=20190619020607' media='all' />
+<link rel='stylesheet' id='baguettebox-style-css'  href='https://hashikake.com/wp-content/themes/cocoon-master/plugins/baguettebox/dist/baguetteBox.min.css?ver=5.3.6&#038;fver=20190619020607' media='all' />
+<link rel='stylesheet' id='slick-theme-style-css'  href='https://hashikake.com/wp-content/themes/cocoon-master/plugins/slick/slick-theme.css?ver=5.3.6&#038;fver=20190619020607' media='all' />
+<link rel='stylesheet' id='cocoon-skin-style-css'  href='https://hashikake.com/wp-content/themes/cocoon-master/skins/skin-colors-blue/style.css?ver=5.3.6&#038;fver=20190619020607' media='all' />
+<style id='cocoon-skin-style-inline-css'>
+@media screen and (max-width:480px){.page-body{font-size:16px}}.main{width:860px}.sidebar{width:376px}@media screen and (max-width:1260px){ .wrap{width:auto}.main,.sidebar,.sidebar-left .main,.sidebar-left .sidebar{margin:0 .5%}.main{width:67%}.sidebar{padding:10px;width:30%}.entry-card-thumb{width:38%}.entry-card-content{margin-left:40%}}body::after{content:url(https://hashikake.com/wp-content/themes/cocoon-master/lib/analytics/access.php?post_id=1669&post_type=post);visibility:hidden;position:absolute;bottom:0;right:0;width:1px;height:1px;overflow:hidden} .toc-checkbox{display:none}.toc-content{visibility:hidden;  height:0;opacity:.2;transition:all .5s ease-out}.toc-checkbox:checked~.toc-content{ visibility:visible;padding-top:.6em;height:100%;opacity:1}.toc-title::after{content:'[開く]';margin-left:.5em;cursor:pointer;font-size:.8em}.toc-title:hover::after{text-decoration:underline}.toc-checkbox:checked+.toc-title::after{content:'[閉じる]'}#respond{display:none}.entry-content>*,.demo .entry-content p{line-height:1.8}.entry-content>*,.demo .entry-content p{margin-top:1.4em;margin-bottom:1.4em}.entry-content>.micro-top{margin-bottom:-1.54em}.entry-content>.micro-balloon{margin-bottom:-1.12em}.entry-content>.micro-bottom{margin-top:-1.54em}.entry-content>.micro-bottom.micro-balloon{margin-top:-1.12em;margin-bottom:1.4em}.blank-box.bb-key-color{border-color:#19448e}.iic-key-color li::before{color:#19448e}.blank-box.bb-tab.bb-key-color::before{background-color:#19448e}.tb-key-color .toggle-button{border:1px solid #19448e;background:#19448e;color:#fff}.tb-key-color .toggle-button::before{color:#ccc}.tb-key-color .toggle-checkbox:checked~.toggle-content{border-color:#19448e}.cb-key-color.caption-box{border-color:#19448e}.cb-key-color .caption-box-label{background-color:#19448e;color:#fff}.tcb-key-color .tab-caption-box-label{background-color:#19448e;color:#fff}.tcb-key-color .tab-caption-box-content{border-color:#19448e}.lb-key-color .label-box-content{border-color:#19448e}.mc-key-color{background-color:#19448e;color:#fff;border:0}.mc-key-color.micro-bottom::after{border-bottom-color:#19448e;border-top-color:transparent}.mc-key-color::before{border-top-color:transparent;border-bottom-color:transparent}.mc-key-color::after{border-top-color:#19448e}.btn-key-color,.btn-wrap.btn-wrap-key-color>a{background-color:#19448e}.has-text-color.has-key-color-color{color:#19448e}.has-background.has-key-color-background-color{background-color:#19448e}.article.page-body,body#tinymce.wp-editor{background-color:#fff}.article.page-body,.editor-post-title__block .editor-post-title__input,body#tinymce.wp-editor{color:#333}
+</style>
+<link rel='stylesheet' id='cocoon-child-keyframes-css'  href='https://hashikake.com/wp-content/themes/cocoon-master/keyframes.css?ver=5.3.6&#038;fver=20190619020607' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://hashikake.com/wp-includes/css/dist/block-library/style.min.css?ver=5.3.6&#038;fver=20200611014628' media='all' />
+<link rel='stylesheet' id='stripe-checkout-button-css'  href='https://checkout.stripe.com/v3/checkout/button.css' media='all' />
+<link rel='stylesheet' id='simpay-public-css'  href='https://hashikake.com/wp-content/plugins/stripe/includes/core/assets/css/simpay-public.min.css?ver=2.4.1&#038;fver=20200514040101' media='all' />
+<link rel='stylesheet' id='enlighterjs-css'  href='https://hashikake.com/wp-content/plugins/enlighter/cache/enlighterjs.min.css?ver=Mu4tteSgSZPhG0L&#038;fver=20200703020547' media='all' />
+<link rel='shortlink' href='https://hashikake.com/?p=1669' />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script>
+		(function(h,o,t,j,a,r){
+			h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+			h._hjSettings={hjid:1410689,hjsv:5};
+			a=o.getElementsByTagName('head')[0];
+			r=o.createElement('script');r.async=1;
+			r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+			a.appendChild(r);
+		})(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+		</script>
+		<!-- Cocoon canonical -->
+<link rel="canonical" href="https://hashikake.com/library">
+<!-- Cocoon meta description -->
+<meta name="description" content="「Pythonをインストールしたはいいけれど、ライブラリをまともに使ったことがない。初学者でも使える、とても便利な神ライブラリを教えてほしい！」本記事は、こんな悩みを持ったPython初学者のための内容です。そもそもライブラリとは、Pyth">
+<!-- Cocoon meta keywords -->
+<meta name="keywords" content="Python">
+<!-- Cocoon JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage":{
+    "@type":"WebPage",
+    "@id":"https://hashikake.com/library"
+  },
+  "headline": "Pythonの便利な神ライブラリ17選",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://hashikake.com/wp-content/uploads/2019/07/1436229_black.jpg",
+    "width": 780,
+    "height": 428
+  },
+  "datePublished": "2019-07-18T15:47:56+09:00",
+  "dateModified": "2020-08-28T16:15:08+09:00",
+  "author": {
+    "@type": "Person",
+    "name": "Hashikake"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ハシカケ-実現したいことから学べるプログラミングサイト",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://hashikake.com/wp-content/themes/cocoon-master/images/no-amp-logo.png",
+      "width": 206,
+      "height": 60
+    }
+  },
+  "description": "「Pythonをインストールしたはいいけれど、ライブラリをまともに使ったことがない。初学者でも使える、とても便利な神ライブラリを教えてほしい！」本記事は、こんな悩みを持ったPython初学者のための内容です。そもそもライブラリとは、Pyth…"
+}
+</script>
+
+<!-- OGP -->
+<meta property="og:type" content="article">
+<meta property="og:description" content="「Pythonをインストールしたはいいけれど、ライブラリをまともに使ったことがない。初学者でも使える、とても便利な神ライブラリを教えてほしい！」本記事は、こんな悩みを持ったPython初学者のための内容です。そもそもライブラリとは、Pyth">
+<meta property="og:title" content="Pythonの便利な神ライブラリ17選">
+<meta property="og:url" content="https://hashikake.com/library">
+<meta property="og:image" content="https://hashikake.com/wp-content/uploads/2019/07/1436229_black.jpg">
+<meta property="og:site_name" content="ハシカケ-実現したいことから学べるプログラミングサイト">
+<meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2019-07-18T15:47:56+09:00" />
+<meta property="article:modified_time" content="2020-08-28T16:15:08+09:00" />
+<meta property="article:section" content="Python">
+<!-- /OGP -->
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="「Pythonをインストールしたはいいけれど、ライブラリをまともに使ったことがない。初学者でも使える、とても便利な神ライブラリを教えてほしい！」本記事は、こんな悩みを持ったPython初学者のための内容です。そもそもライブラリとは、Pyth">
+<meta name="twitter:title" content="Pythonの便利な神ライブラリ17選">
+<meta name="twitter:url" content="https://hashikake.com/library">
+<meta name="twitter:image" content="https://hashikake.com/wp-content/uploads/2019/07/1436229_black.jpg">
+<meta name="twitter:domain" content="hashikake.com">
+<!-- /Twitter Card -->
+<style>.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><link rel="icon" href="https://hashikake.com/wp-content/uploads/2019/06/cropped-hashikakepro-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://hashikake.com/wp-content/uploads/2019/06/cropped-hashikakepro-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://hashikake.com/wp-content/uploads/2019/06/cropped-hashikakepro-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://hashikake.com/wp-content/uploads/2019/06/cropped-hashikakepro-1-270x270.png" />
+		<style id="wp-custom-css">
+			.EnlighterJS {
+	font-size: 16px !important;
+}
+
+.EnlighterJS span {
+	font-size: 1em !important;
+	line-height: 1.5em;
+}
+
+.copy-textarea {
+	margin: 0;
+	padding: 0;
+	height: 1px;
+	width: 1px;
+	min-height: auto;
+	border: none;
+	opacity: 0;
+}
+
+.copy-btn {
+	padding: 3px;
+	width: 25px;
+	background: #fff;
+	border: 1px solid #dfdfdf;
+}
+
+.copy-btn:hover {
+	cursor: pointer;
+}
+
+.EnlighterJSRawButton {
+	width: 25px !important;
+	height: 28px !important;
+}
+
+.EnlighterJSToolbar {
+	padding: 5px 5px 0 0;
+}		</style>
+		
+
+
+<script>
+	// document.addEventListener('DOMContentLoaded', function() {
+	// 	if ('serviceWorker' in navigator) {
+	// 		navigator.serviceWorker.getRegistration()
+	// 			.then(registration => {
+	// 				registration.unregister();
+	// 		})
+	// 	}
+	// }, false);
+</script>
+
+
+	
+<script data-ad-client="ca-pub-0866134097631803" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>	
+</head>
+
+<body class="post-template-default single single-post postid-1669 single-format-standard public-page page-body categoryid-2 ff-yu-gothic fz-18px fw-400 hlt-center-logo-wrap ect-entry-card-wrap rect-entry-card-wrap scrollable-sidebar no-scrollable-main sidebar-right mblt-slide-in author-admin mobile-button-slide-in no-mobile-sidebar no-sp-snippet" itemscope itemtype="https://schema.org/WebPage">
+    <script type="text/javascript">
+        window._pt_lt = new Date().getTime();
+        window._pt_sp_2 = [];
+        _pt_sp_2.push('setAccount,13675a89');
+        var _protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        (function() {
+            var atag = document.createElement('script'); atag.type = 'text/javascript'; atag.async = true;
+            atag.src = _protocol + 'js.ptengine.jp/pta.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(atag, s);
+        })();
+    </script>
+            	
+
+
+
+
+
+
+<div id="container" class="container cf">
+  
+<div id="header-container" class="header-container">
+  <div class="header-container-in hlt-center-logo">
+    <header id="header" class="header cf" itemscope itemtype="https://schema.org/WPHeader">
+
+      <div id="header-in" class="header-in wrap cf" itemscope itemtype="https://schema.org/WebSite">
+
+        
+<div class="tagline" itemprop="alternativeHeadline">プログラミングを実現したいことから逆算して学べるサイトです。</div>
+
+        
+        <div class="logo logo-header logo-text"><a href="https://hashikake.com" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text" itemprop="name about">ハシカケ-実現したいことから学べるプログラミングサイト</span></a></div>
+        
+        
+      </div>
+
+    </header>
+
+    <!-- Navigation -->
+<nav id="navi" class="navi cf" itemscope itemtype="https://schema.org/SiteNavigationElement">
+  <div id="navi-in" class="navi-in wrap cf">
+          </div><!-- /#navi-in -->
+</nav>
+<!-- /Navigation -->
+  </div><!-- /.header-container-in -->
+</div><!-- /.header-container -->
+
+  
+  
+
+  
+  
+  
+  
+  
+  <div id="content" class="content cf">
+
+    <div id="content-in" class="content-in wrap">
+
+        <main id="main" class="main" itemscope itemtype="https://schema.org/Blog">
+
+<div id="breadcrumb" class="breadcrumb breadcrumb-category sbp-main-top" itemscope itemtype="https://schema.org/BreadcrumbList"><div class="breadcrumb-home" itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span class="fa fa-home fa-fw"></span><a href="https://hashikake.com" itemprop="item"><span itemprop="name">ホーム</span></a><meta itemprop="position" content="1" /><span class="sp"><span class="fa fa-angle-right"></span></span></div><div class="breadcrumb-item" itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span class="fa fa-folder fa-fw"></span><a href="https://hashikake.com/?cat=2" itemprop="item"><span itemprop="name">Python</span></a><meta itemprop="position" content="2" /></div></div><!-- /#breadcrumb -->
+
+<article id="post-1669" class="article post-1669 post type-post status-publish format-standard has-post-thumbnail hentry category-python-post" itemscope="itemscope" itemprop="blogPost" itemtype="https://schema.org/BlogPosting">
+  
+      
+      
+      <header class="article-header entry-header">
+        <h1 class="entry-title" itemprop="headline">
+          Pythonの便利な神ライブラリ17選        </h1>
+
+        
+        
+        <div class="eye-catch-wrap">
+<figure class="eye-catch" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+  <img width="780" height="428" src="https://hashikake.com/wp-content/uploads/2019/07/1436229_black.jpg" class="attachment-780x428 size-780x428 eye-catch-image wp-post-image" alt="Pythonのライブラリ12選" srcset="https://hashikake.com/wp-content/uploads/2019/07/1436229_black.jpg 780w, https://hashikake.com/wp-content/uploads/2019/07/1436229_black-300x165.jpg 300w, https://hashikake.com/wp-content/uploads/2019/07/1436229_black-768x421.jpg 768w" sizes="(max-width: 780px) 100vw, 780px" />  <meta itemprop="url" content="https://hashikake.com/wp-content/uploads/2019/07/1436229_black.jpg">
+  <meta itemprop="width" content="780">
+  <meta itemprop="height" content="428">
+  <span class="cat-label cat-label-2">Python</span></figure>
+</div>
+
+        <div class="sns-share ss-col-6 ss-high-and-low-lc bc-brand-color sbc-hide ss-top">
+  
+  <div class="sns-share-buttons sns-buttons">
+          <a href="https://twitter.com/intent/tweet?text=Python%E3%81%AE%E4%BE%BF%E5%88%A9%E3%81%AA%E7%A5%9E%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA17%E9%81%B8&amp;url=https%3A%2F%2Fhashikake.com%2Flibrary" class="share-button twitter-button twitter-share-button-sq" target="blank" rel="nofollow noopener noreferrer"><span class="social-icon icon-twitter"></span><span class="button-caption">Twitter</span><span class="share-count twitter-share-count"></span></a>
+    
+          <a href="//www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhashikake.com%2Flibrary&amp;t=Python%E3%81%AE%E4%BE%BF%E5%88%A9%E3%81%AA%E7%A5%9E%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA17%E9%81%B8" class="share-button facebook-button facebook-share-button-sq" target="blank" rel="nofollow noopener noreferrer"><span class="social-icon icon-facebook"></span><span class="button-caption">Facebook</span><span class="share-count facebook-share-count"></span></a>
+    
+          <a href="//b.hatena.ne.jp/entry/s/hashikake.com/library" class="share-button hatebu-button hatena-bookmark-button hatebu-share-button-sq" data-hatena-bookmark-layout="simple" title="Pythonの便利な神ライブラリ17選" target="blank" rel="nofollow noopener noreferrer"><span class="social-icon icon-hatena"></span><span class="button-caption">はてブ</span><span class="share-count hatebu-share-count"></span></a>
+    
+    
+          <a href="//getpocket.com/edit?url=https://hashikake.com/library" class="share-button pocket-button pocket-share-button-sq" target="blank" rel="nofollow noopener noreferrer"><span class="social-icon icon-pocket"></span><span class="button-caption">Pocket</span><span class="share-count pocket-share-count"></span></a>
+    
+          <a href="//timeline.line.me/social-plugin/share?url=https%3A%2F%2Fhashikake.com%2Flibrary" class="share-button line-button line-share-button-sq" target="_blank" rel="nofollow noopener noreferrer"><span class="social-icon icon-line"></span><span class="button-caption">LINE</span><span class="share-count line-share-count"></span></a>
+    
+    
+          <a href="javascript:void(0)" class="share-button copy-button copy-share-button-sq" rel="nofollow noopener noreferrer" data-clipboard-text="Pythonの便利な神ライブラリ17選 https://hashikake.com/library"><span class="fa fa-clipboard"></span><span class="button-caption">コピー</span><span class="share-count copy-share-count"></span></a>
+    
+  </div><!-- /.sns-share-buttons -->
+
+</div><!-- /.sns-share -->
+
+
+        <div class="date-tags">
+  <span class="post-update"><time class="entry-date date updated" datetime="2020-08-28T16:15:08+09:00" itemprop="dateModified">2020.08.28</time></span><span class="post-date"><time class="entry-date date published" datetime="2019-07-18T15:47:56+09:00" itemprop="datePublished">2019.07.18</time></span>
+  </div>
+
+        
+         
+        
+        
+      </header>
+
+      <div class="entry-content cf" itemprop="mainEntityOfPage">
+      <p>「Pythonをインストールしたはいいけれど、ライブラリをまともに使ったことがない。初学者でも使える、とても便利な神ライブラリを教えてほしい！」</p>
+<p>本記事は、こんな悩みを持ったPython初学者のための内容です。</p>
+<p>そもそも<span class="bold-red">ライブラリとは、Pythonに機能を提供してくれるプログラムの集まり</span>です。</p>
+<p><a href="https://hashikake.com/python_module" target="_blank">モジュール</a>やパッケージのことをライブラリと呼ぶこともあります。</p>
+<p>Pythonはそもそも機能が少ない言語なので、ライブラリの種類が群を抜いて豊富。<br />
+一つ一つのライブラリの使い方を覚えていくことで、Pythonを使いこなせるようになっていきます。</p>
+<p>そこで本記事では、Python初学者を抜け出すために役に立つ、簡単・便利なライブラリを12個厳選してご紹介します。</p>
+<p>一つ先のステップに進みたいあなたは、必ずチェックしてください！</p>
+<div class="blank-box bb-tab bb-point bb-red">はじめてPythonを使う方はこちらもどうぞ<br />
+<a href="https://hashikake.com/python-install" target="_blank">【最新】はじめてPythonをインストールするための手順についてOS別（Windows10, Mac）で解説</a></div>
+
+  <div id="toc" class="toc tnt-number toc-center border-element"><input type="checkbox" class="toc-checkbox" id="toc-checkbox-1" checked><label class="toc-title" for="toc-checkbox-1">目次</label>
+    <div class="toc-content">
+    <ol class="toc-list open"><li><a href="#toc1" tabindex="0">標準ライブラリと外部ライブラリ</a><ol><li><a href="#toc2" tabindex="0">外部ライブラリを使うためには最初にinstallが必要</a></li><li><a href="#toc3" tabindex="0">外部ライブラリの一覧を調べる方法</a></li></ol></li><li><a href="#toc4" tabindex="0">ライブラリをプログラム内で読み込むためには、importが必要</a></li><li><a href="#toc5" tabindex="0">とても便利な外部ライブラリ</a><ol><li><a href="#toc6" tabindex="0">iclawler</a></li><li><a href="#toc7" tabindex="0">PyCaret</a></li><li><a href="#toc8" tabindex="0">pickle</a></li><li><a href="#toc9" tabindex="0">pytube</a></li></ol></li><li><a href="#toc10" tabindex="0">システムに関するライブラリpipとsys</a><ol><li><a href="#toc11" tabindex="0">pip</a></li><li><a href="#toc12" tabindex="0">sys</a></li></ol></li><li><a href="#toc13" tabindex="0">日付についてのライブラリdatetime、dateutil、calendar</a><ol><li><a href="#toc14" tabindex="0">datetime</a></li><li><a href="#toc15" tabindex="0">dateutil</a></li><li><a href="#toc16" tabindex="0">calendar</a></li></ol></li><li><a href="#toc17" tabindex="0">数学系のライブラリmath、Numpy、matplotlib</a><ol><li><a href="#toc18" tabindex="0">math</a></li><li><a href="#toc19" tabindex="0">Numpy</a></li><li><a href="#toc20" tabindex="0">matplotlib</a></li></ol></li><li><a href="#toc21" tabindex="0">統計・データ処理についてのライブラリpandas、sklearn</a><ol><li><a href="#toc22" tabindex="0">pandas</a></li><li><a href="#toc23" tabindex="0">sklearn</a></li></ol></li><li><a href="#toc24" tabindex="0">画像処理ライブラリPillow、OpenCV</a><ol><li><a href="#toc25" tabindex="0">Pillow</a></li><li><a href="#toc26" tabindex="0">OpenCV</a></li><li><a href="#toc27" tabindex="0">TWINT</a></li></ol></li><li><a href="#toc28" tabindex="0">まとめ</a></li></ol>
+    </div>
+  </div>
+
+<h2><span id="toc1">標準ライブラリと外部ライブラリ</span></h2>
+<p>具体的なライブラリを紹介する前にライブラリの2つの種類について説明しておきます。</p>
+<p>まず、Pythonをインストールした時からもともと入っているライブラリを<span class="bold-red">標準ライブラリ</span>と言います。</p>
+<p>それに対してPythonに組み込まれておらず外部から読み込む必要のあるライブラリを<span class="bold-red">外部ライブラリ</span>と言います。</p>
+<h3><span id="toc2">外部ライブラリを使うためには最初にinstallが必要</span></h3>
+<p>この外部ライブラリを使うためにはあらかじめコマンドプロンプトやターミナルで</p>
+<p><code class="EnlighterJSRAW" data-enlighter-language="null">pip install 外部ライブラリ名</code></p>
+<p>のコマンドを打ち込んでインストールしておく必要があります。（インストールしていない場合エラーとなります。）</p>
+<p><img class="aligncenter size-full wp-image-5257" src="https://hashikake.com/wp-content/uploads/2019/07/2020-08-13-18-17-56.png" alt="外部ライブラリのインストール" width="535" height="149" srcset="https://hashikake.com/wp-content/uploads/2019/07/2020-08-13-18-17-56.png 535w, https://hashikake.com/wp-content/uploads/2019/07/2020-08-13-18-17-56-300x84.png 300w" sizes="(max-width: 535px) 100vw, 535px" /></p>
+<p>ちなみに標準ライブラリーはインストールの必要はありません。</p>
+<h3><span id="toc3">外部ライブラリの一覧を調べる方法</span></h3>
+<p>外部ライブラリは膨大な数が登録されています。</p>
+<p>正直常に新しいライブラリが登録されているので、リストアップするのは難しいです。</p>
+<p>登録されている外部ライブラリを調べるには下のPyPIのサイトで検索可能です。</p>
+<a rel="noopener" href="https://pypi.org/" title="PyPI &middot; The Python Package Index" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank"><div class="blogcard external-blogcard eb-left cf"><figure class="blogcard-thumbnail external-blogcard-thumbnail"><img src="https://hashikake.com/wp-content/uploads/cocoon-resources/blog-card-cache/705bf5d7150ee1ad9a978cd142390d79.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" /></figure><div class="blogcard-content external-blogcard-content"><div class="blogcard-title external-blogcard-title">PyPI &middot; The Python Package Index</div><div class="blogcard-snipet external-blogcard-snipet">The Python Package Index (PyPI) is a repository of software for the Python programming language.</div></div><div class="blogcard-footer external-blogcard-footer cf"><div class="blogcard-site external-blogcard-site"><div class="blogcard-favicon external-blogcard-favicon"><img src="//www.google.com/s2/favicons?domain=pypi.org" class="blogcard-favicon-image" alt="" width="16" height="16" /></div><div class="blogcard-domain external-blogcard-domain">pypi.org</div></div></div></div></a>
+<p>例えば検索窓に「twitter」と入れて検索すると</p>
+<p><img class="aligncenter size-full wp-image-4263" src="https://hashikake.com/wp-content/uploads/2019/07/2020-04-14-2-13-10.png" alt="twitter" width="1120" height="653" srcset="https://hashikake.com/wp-content/uploads/2019/07/2020-04-14-2-13-10.png 1120w, https://hashikake.com/wp-content/uploads/2019/07/2020-04-14-2-13-10-300x175.png 300w, https://hashikake.com/wp-content/uploads/2019/07/2020-04-14-2-13-10-1024x597.png 1024w, https://hashikake.com/wp-content/uploads/2019/07/2020-04-14-2-13-10-768x448.png 768w" sizes="(max-width: 1120px) 100vw, 1120px" /></p>
+<p>上のようにたくさんのライブラリを見つけることができます。</p>
+<h2><span id="toc4">ライブラリをプログラム内で読み込むためには、importが必要</span></h2>
+<p>次に、importについて軽く解説します。<br />
+importは、ライブラリを読み込むためのコードです。</p>
+<p>使い方としては、importと入力した後に半角スペースを空け、ライブラリなどimport可能なファイル名を入力します。</p>
+<p>これを実行することで、そのライブラリの機能が使えるようになるのです。</p>
+<h2><span id="toc5">とても便利な外部ライブラリ</span></h2>
+<p>まずここでは、中級者向けのとても便利な外部ライブラリを紹介します。</p>
+<h3><span id="toc6">iclawler</span></h3>
+<p>iclawlerは<span class="bold-red">キーワードを指定して、まとまった画像を一気にダウンロードできる</span>ライブラリーです。</p>
+<p>機械学習などのトレーニング用の画像をキーワード指定で一気に集められるのがこのライブラリ。</p>
+<p>100枚など枚数を決めてダウンロードすることができます。</p>
+<p>フォルダを作って指定のキーワードでネット上にある画像を集めてくれるので、とても便利です。</p>
+<h3><span id="toc7">PyCaret</span></h3>
+<p>わずか数行という簡単なコードの記述のみで<span class="bold-red">機械学習の前処理、モデルの構築、はたまたデータ可視化まで行ってくれるライブラリ</span>です。</p>
+<p>機械学習でおなじみのscikit-learnなどのライブラリの機能を含んでいます。</p>
+<p>PyCaret2.0ではautomlの機能が追加され、かなりパワーアップされました。</p>
+<p>正直AUTO MLか！とまで言われたライブラリ。</p>
+<p>機械学習入門者にはぜひ使って欲しい。</p>
+<h3><span id="toc8">pickle</span></h3>
+<p>pickleは<span class="bold-red">あらゆるデータを保存しておくのに便利なライブラリ。</span></p>
+<p>リスト、文字列、クラスのインスタンス、データフレームなど色々なデータをバイナリファイル形式に変換して保存することができ、呼び出すのも簡単です。</p>
+<p>メリットはプログラムをシャットダウンしてもデータが保存されていること、CSVからの読み込みよりもスピードが数十倍から100倍程度早いことなどです。</p>
+<h3><span id="toc9">pytube</span></h3>
+<p><span class="bold-red">Youtubeの動画をダウンロードすることができるライブラリ</span>です。</p>
+<p>例えば動画の文字起こしのプログラムを作るために、何か適当な動画を使いたいなどの理由で使えます。</p>
+<p>pytubeを使えば、好きな動画を指定して自由にダウンロードすることができるので、便利です。</p>
+<h2><span id="toc10">システムに関するライブラリpipとsys</span></h2>
+<p>次に使用頻度が比較的高い標準ライブラリであるpipとsysについて説明していきます。</p>
+<h3><span id="toc11">pip</span></h3>
+<p>pipは標準ライブラリで、ライブラリを管理するためのライブラリです。<br />
+Pythonを使う上では必須のライブラリの一つといえます。</p>
+<p>・新規ライブラリをインストール、削除する<br />
+・インストールしたライブラリの情報を表示する<br />
+・管理しているライブラリを一覧形式で表示する</p>
+<p>ここでは、例としてpip管理のライブラリを一覧で表示しています。<br />
+「pip freeze」と入力して実行するだけで、いつでも情報が確認できます。</p>
+<p>【コード】</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="python">pip freeze</pre>
+<p>【実行結果】</p>
+<div class="dark-box">alabaster==0.7.12<br />
+anaconda-client==1.7.2<br />
+anaconda-navigator==1.9.7<br />
+anaconda-project==0.8.2<br />
+asnicrypto==0.24.0<br />
+astroid=2.2.5<br />
+astropy==3.1.2<br />
+atomi cwrites==1.3.0<br />
+attrsr=19.1.0<br />
+Babel==2.6.0<br />
+backcall==0.1.0<br />
+backports. os==0.1.1<br />
+backports. shutil-get-terminal-size==1.0.0<br />
+beautiful soup4==4.7.1<br />
+bitarray==0.8.3</div>
+<h3><span id="toc12">sys</span></h3>
+<p>こちらも標準ライブラリです。<br />
+「システムパラメーター」という、システムの挙動に外部から干渉できるデータに関する関数が含まれています。</p>
+<p>・入力したプログラムを早期終了させる</p>
+<p>この例の場合は、表示の途中でシステムが終了するようにsys.exitと入力しました。<br />
+出力のコード「<a href="https://hashikake.com/python_print" target="_blank">print</a>」によって、通常は「こんばんは」まで表示されるところを、sysが早期終了させています。</p>
+<p>【コード】</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="python">import sys
+
+print('おはようございます')
+print('こんにちは')
+sys.exit()
+print('こんばんは')</pre>
+<p>【実行結果】</p>
+<div class="dark-box">おはようございます<br />
+こんにちはAn exception has occurred. use %tb to see the full traceback.SystemExit</div>
+<h2><span id="toc13">日付についてのライブラリdatetime、dateutil、calendar</span></h2>
+<p>次に日付やカレンダーの表示のために必要なライブラリについて紹介していきます。</p>
+<h3><span id="toc14">datetime</span></h3>
+<p>datetimeはPythonの標準ライブラリです。<br />
+datetimeの主な機能は、時刻に関するものです。</p>
+<p>・現在の日付と時刻の取得<br />
+・年月日から時分秒までを単体で取得<br />
+・日付の足し算や引き算</p>
+<p>例えば、現在の時刻を取得するためにはこのように入力します。</p>
+<p>【コード】</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="python" data-enlighter-linenumbers="false">import datetime
+print(datetime.datetime.now())</pre>
+<p>【実行結果】</p>
+<div class="dark-box">2019-07-15 16:45:02. 781002</div>
+<h3><span id="toc15">dateutil</span></h3>
+<p>dateutilは、日付に関する外部ライブラリです。<br />
+Pythonに標準装備されていないためインストールが必要になりますが、pipから簡単にインストールできます。</p>
+<p>dateutilは、標準ライブラリであるdatetimeの扱いにくさ、機能不足を補ってくれます。<br />
+dateutilの主な機能はこちらです。</p>
+<p>・現在時刻の取得<br />
+・日付の足し算と引き算</p>
+<p>こちらの例では、本日の日付に「3か月」足し算した日付を出しています。</p>
+<p>【コード】</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="python" data-enlighter-linenumbers="false">from dateutil.relativedelta import relativedelta
+
+today = datetime.date.today()
+print(today)
+
+print(today + relativedelta(months=+3))</pre>
+<p>【実行結果】</p>
+<div class="dark-box">2019-07-15<br />
+2019-10-15</div>
+<h3><span id="toc16">calendar</span></h3>
+<p>その名の通りカレンダーの表示や、日付の計算等ができます。<br />
+日付データを表示するライブラリとしてある程度便利です。</p>
+<p>例えば、このようにシンプルなカレンダーを作ることができます。<br />
+【コード】</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="python" data-enlighter-linenumbers="false">from calendar import TextCalendar
+
+tcalendar = TextCalendar (firstweekday=6)
+print (tcalendar. formatmonth (2019, 7))</pre>
+<p>【実行結果】<br />
+<img class="aligncenter size-full wp-image-1784" src="https://hashikake.com/wp-content/uploads/2019/07/Text-Calendar.jpg" alt="" width="853" height="199" srcset="https://hashikake.com/wp-content/uploads/2019/07/Text-Calendar.jpg 853w, https://hashikake.com/wp-content/uploads/2019/07/Text-Calendar-300x70.jpg 300w, https://hashikake.com/wp-content/uploads/2019/07/Text-Calendar-768x179.jpg 768w" sizes="(max-width: 853px) 100vw, 853px" /></p>
+<h2><span id="toc17">数学系のライブラリmath、Numpy、matplotlib</span></h2>
+<p>数学系のライブラリには、特に簡単で便利な機能が充実しています。</p>
+<h3><span id="toc18">math</span></h3>
+<p>数学に関する関数が含まれている標準ライブラリです。</p>
+<p>・円周率などの表示<br />
+・平方根や自然対数などの計算</p>
+<p>ここでは例として、mathにある各オブジェクトコードをimportしました。<br />
+「pi」は円周率、「log」は自然対数、「sqrt」は平方根を計算するためのオブジェクトコードです。</p>
+<p>【コード】</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="python" data-enlighter-linenumbers="false">from math import pi
+from math import log
+from math import sqrt
+
+print(pi)
+print(log(5))
+print(sqrt(144))</pre>
+<p>【実行結果】</p>
+<div class="dark-box">3.141592653589793<br />
+1.6094379124341003<br />
+12.0</div>
+<h3><span id="toc19">Numpy</span></h3>
+<p>科学技術計算などで使われる外部ライブラリです。<br />
+配列や行列の演算を高速で行うことができ、非常に人気のあるライブラリでもあります。</p>
+<p>・配列の演算<br />
+・行列の演算</p>
+<p>例えばこのように入力することで、配列の各要素を定数倍できます。</p>
+<p>【コード】</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="python" data-enlighter-linenumbers="false">import numpy as np
+
+n_array = np.array([[1,2,3],[4,5,6]])
+print(n_array * 5)</pre>
+<p>【実行結果】</p>
+<div class="dark-box">[[ 5 10 15]<br />
+[20 25 30]]</div>
+<h3><span id="toc20">matplotlib</span></h3>
+<p>データをグラフ化するのに非常に便利なのが、このmatplotlibです。</p>
+<p>・sinやcosの計算式をグラフ化<br />
+・グラフにタイトル、軸名、凡例などを付ける<br />
+・グラフの線の色、線種を変更できる</p>
+<p>matplotlibは、mathや numpyとも相性がいいです。</p>
+<p>例えばこの場合は、numpyで計算した結果をmatplotlibでグラフとして表示しています。<br />
+コードの最初の因数がx軸、次の因数がy軸を表します。</p>
+<p>【コード】</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="python" data-enlighter-linenumbers="false">import numpy as np 
+import matplotlib. pyplot as pit
+
+x = np. arange (0, 10, 0.1)
+y = np. cos (x)
+pit. plot (x, y)
+pit. show</pre>
+<p>【実行結果】<br />
+<img class="aligncenter size-full wp-image-1786" src="https://hashikake.com/wp-content/uploads/2019/07/matplotlib実行結果.jpg" alt="" width="1017" height="379" srcset="https://hashikake.com/wp-content/uploads/2019/07/matplotlib実行結果.jpg 1017w, https://hashikake.com/wp-content/uploads/2019/07/matplotlib実行結果-300x112.jpg 300w, https://hashikake.com/wp-content/uploads/2019/07/matplotlib実行結果-768x286.jpg 768w" sizes="(max-width: 1017px) 100vw, 1017px" /></p>
+<h2><span id="toc21">統計・データ処理についてのライブラリpandas、sklearn</span></h2>
+<p>次はデータの処理やCSVファイルを扱える外部ライブラリであるpandasとsklearnの紹介です。</p>
+<h3><span id="toc22">pandas</span></h3>
+<p>データの統計量の表示や、そのグラフ化ができます。<br />
+Pythonでデータ分析や機械学習を行う場合には必須となるライブラリです。</p>
+<p>・データ概要の表示<br />
+・データの行数列の表示<br />
+・統計量を表示</p>
+<p>この例は、pandas内蔵のサンプルデータを読み込んで表示したものです。</p>
+<p>【コード】</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="python" data-enlighter-linenumbers="false">import pandas as pd
+from pandas import DataFrame
+import numpy as np
+
+from sklearn import datasets
+boston = datasets. load_boston()
+
+df = DataFrame (boston, data, columns = boston. feature_names)
+df.head()</pre>
+<p>【実行結果】<br />
+<img class="aligncenter size-full wp-image-1787" src="https://hashikake.com/wp-content/uploads/2019/07/pandas.jpg" alt="" width="1157" height="269" srcset="https://hashikake.com/wp-content/uploads/2019/07/pandas.jpg 1157w, https://hashikake.com/wp-content/uploads/2019/07/pandas-300x70.jpg 300w, https://hashikake.com/wp-content/uploads/2019/07/pandas-768x179.jpg 768w, https://hashikake.com/wp-content/uploads/2019/07/pandas-1024x238.jpg 1024w" sizes="(max-width: 1157px) 100vw, 1157px" /></p>
+<h3><span id="toc23">sklearn</span></h3>
+<p>こちらは、比較的簡単な機械学習アルゴリズムです。</p>
+<p>学習させたいデータを入力して学習させ、予測したいデータを入力することで予測の正答率を算出することができます。</p>
+<p>・分類<br />
+・回帰<br />
+・クラスタリング</p>
+<p>こちらの例では、まずtest_dataを学習させ、入力したtest_labelと照らし合わせた分類をしています。</p>
+<p>【コード】</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="python" data-enlighter-linenumbers="false">from sklearn. svm import Linear SVC
+from sklearn. metrics import accuracy_score
+
+learn_data=[[0,0],[1,0],[0,1],[1,1]]
+learn_label=[0, 0, 0, 1]
+
+clf=LinearSVC()
+
+clf.fit(learn_data, learn_label)
+
+test_data=[[0,0],[1,0],[0,1],[1,1]]
+test_label=clf.predict (test_data)
+
+print (test_data, "の予測結果:", test_label)
+print("正解率=", accuracy_score([0,0,0,1], test_label))</pre>
+<p>【実行結果】</p>
+<div class="dark-box">[[0,0],[1,0],[0,1],[1,1]]の予測結果: [0 0 0 1]<br />
+正解率= 1.0</div>
+<h2><span id="toc24">画像処理ライブラリPillow、OpenCV</span></h2>
+<p>次は画像処理に便利な外部ライブラリーである、PillowとOpenCVについて紹介します。</p>
+<h3><span id="toc25">Pillow</span></h3>
+<p>基本的な画像処理を行うライブラリです。<br />
+次に紹介する「OpenCV」のような高度な処理はできないものの、シンプルな構造で使いやすいという特徴があります。</p>
+<p>・画像の表示<br />
+・画像のリサイズ<br />
+・画像のトリミング</p>
+<p>この例では、コード入力によってあらかじめ読み込んでおいた画像を表示しています。</p>
+<p>【コード】</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="python" data-enlighter-linenumbers="false">from PIL import Image,ImageFilter
+
+im = Image.open("PixabayImage_2019-06-19_14-38-56.jpg")
+im show()</pre>
+<h3><span id="toc26">OpenCV</span></h3>
+<p>コンピュータで画像、データを処理するのに便利な様々な機能を備えています。<br />
+Pythonで画像処理を行う場合は欠かせないライブラリです。</p>
+<p>・画素データの表示<br />
+・輪郭の抽出<br />
+・合成</p>
+<p>この例では、ネットから拾ってきた画像をurllib.requestでダウンロードし、OpenCVで読み込むことで画素データを表示しました。</p>
+<p>【コード】</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="python" data-enlighter-linenumbers="false">import urllib.request as req
+url = "http://www.wallpaper-box.com/cat/19201080/images/cat13.jpg"
+req.urlretrieve(url."test.jpg")
+
+import cv2
+img = cv2.imread("test.jpg")
+print(img)</pre>
+<p>【実行結果】</p>
+<div class="dark-box">[[[242 239 234]<br />
+[242 239 234]<br />
+[242 239 234][242 240 230]<br />
+[242 240 230]<br />
+[242 240 230]][[242 239 234]<br />
+[242 239 234]<br />
+[242 239 234]</div>
+<h3><span id="toc27">TWINT</span></h3>
+<p>TWINTはツイッターのスクレイピングライブラリーです。</p>
+<p>ツイッターAPIなしにツイートをスクレイピングできます。</p>
+<p>インストールは</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="null">pip install twint</pre>
+<p>でできます。</p>
+<p>次の例では、<a href="https://twitter.com/uuyr112">https://twitter.com/uuyr112</a></p>
+<p>のアカウントから、pythonというキーワードでツイートを検索してくれます。</p>
+<p>【コード】</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="null">import twint
+
+# Configure
+c = twint.Config()
+c.Username = "uuyr112"
+c.Search = "python"
+
+# Run
+twint.run.Search(c)</pre>
+<h2><span id="toc28">まとめ</span></h2>
+<p>ここまでにご紹介したライブラリは、大きく5種類に分けられます。</p>
+<p>1.システムに関するライブラリ<br />
+2.日付についてのライブラリ<br />
+3.数学系のライブラリ<br />
+4.統計やデータ処理についてのライブラリ<br />
+5.画像処理ライブラリ</p>
+<p>本記事では初心者でも始めやすく、かつ便利な12種類のライブラリをご紹介しました。</p>
+<p>これらの機能を使えるようになるだけで、Pythonでできる事が一気に広がるはずです。</p>
+<p>実はこれらのライブラリにも、紹介しきれなかった機能がまだまだあります。<br />
+基本的な機能から始め、どんどん複雑なライブラリを使えるように学習していきましょう。</p>
+<p>特にこれから発展していくとされる機械学習やAIは、まさにPythonの専門分野。<br />
+Pythonには未だに無限の可能性が眠っているといっても決して過剰ではありません。</p>
+<p>ライブラリを使いこなすことでPythonを操る能力は、まさに未来を作っていくのです。</p>
+      </div>
+
+      
+      <footer class="article-footer entry-footer">
+
+        
+        
+        
+<div class="entry-categories-tags ctdt-one-row">
+  <div class="entry-categories"><a class="cat-link cat-link-2" href="https://hashikake.com/?cat=2">Python</a></div>
+  <div class="entry-tags"></div>
+</div>
+
+        
+        
+        
+        
+        <div class="sns-share ss-col-3 bc-brand-color sbc-hide ss-bottom">
+      <div class="sns-share-message">シェアする</div>
+  
+  <div class="sns-share-buttons sns-buttons">
+          <a href="https://twitter.com/intent/tweet?text=Python%E3%81%AE%E4%BE%BF%E5%88%A9%E3%81%AA%E7%A5%9E%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA17%E9%81%B8&amp;url=https%3A%2F%2Fhashikake.com%2Flibrary" class="share-button twitter-button twitter-share-button-sq" target="blank" rel="nofollow noopener noreferrer"><span class="social-icon icon-twitter"></span><span class="button-caption">Twitter</span><span class="share-count twitter-share-count"></span></a>
+    
+          <a href="//www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhashikake.com%2Flibrary&amp;t=Python%E3%81%AE%E4%BE%BF%E5%88%A9%E3%81%AA%E7%A5%9E%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA17%E9%81%B8" class="share-button facebook-button facebook-share-button-sq" target="blank" rel="nofollow noopener noreferrer"><span class="social-icon icon-facebook"></span><span class="button-caption">Facebook</span><span class="share-count facebook-share-count"></span></a>
+    
+          <a href="//b.hatena.ne.jp/entry/s/hashikake.com/library" class="share-button hatebu-button hatena-bookmark-button hatebu-share-button-sq" data-hatena-bookmark-layout="simple" title="Pythonの便利な神ライブラリ17選" target="blank" rel="nofollow noopener noreferrer"><span class="social-icon icon-hatena"></span><span class="button-caption">はてブ</span><span class="share-count hatebu-share-count"></span></a>
+    
+    
+          <a href="//getpocket.com/edit?url=https://hashikake.com/library" class="share-button pocket-button pocket-share-button-sq" target="blank" rel="nofollow noopener noreferrer"><span class="social-icon icon-pocket"></span><span class="button-caption">Pocket</span><span class="share-count pocket-share-count"></span></a>
+    
+          <a href="//timeline.line.me/social-plugin/share?url=https%3A%2F%2Fhashikake.com%2Flibrary" class="share-button line-button line-share-button-sq" target="_blank" rel="nofollow noopener noreferrer"><span class="social-icon icon-line"></span><span class="button-caption">LINE</span><span class="share-count line-share-count"></span></a>
+    
+    
+          <a href="javascript:void(0)" class="share-button copy-button copy-share-button-sq" rel="nofollow noopener noreferrer" data-clipboard-text="Pythonの便利な神ライブラリ17選 https://hashikake.com/library"><span class="fa fa-clipboard"></span><span class="button-caption">コピー</span><span class="share-count copy-share-count"></span></a>
+    
+  </div><!-- /.sns-share-buttons -->
+
+</div><!-- /.sns-share -->
+
+        <!-- SNSページ -->
+<div class="sns-follow bc-brand-color fbc-hide sf-bottom">
+
+    <div class="sns-follow-message">Hashikakeをフォローする</div>
+    <div class="sns-follow-buttons sns-buttons">
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <a href="//feedly.com/i/subscription/feed/https%3A%2F%2Fhashikake.com%2F%3Ffeed%3Drss2" class="follow-button feedly-button feedly-follow-button-sq" target="blank" title="feedlyで更新情報を購読" rel="nofollow noopener noreferrer"><span class="icon-feedly-logo"></span><span class="follow-count feedly-follow-count"></span></a>
+  
+      <a href="https://hashikake.com/?feed=rss2" class="follow-button rss-button rss-follow-button-sq" target="_blank" title="RSSで更新情報をフォロー" rel="nofollow noopener noreferrer"><span class="icon-rss-logo"></span></a>
+  
+  </div><!-- /.sns-follow-buttons -->
+
+</div><!-- /.sns-follow -->
+
+        
+        
+        
+        <div class="footer-meta">
+  <div class="author-info">
+    <a href="https://hashikake.com/about" class="author-link">
+      <span class="post-author vcard author" itemprop="editor author creator copyrightHolder" itemscope itemtype="https://schema.org/Person">
+        <span class="author-name fn" itemprop="name">Hashikake</span>
+      </span>
+    </a>
+  </div>
+</div>
+
+        <!-- publisher設定 -->
+                <div class="publisher" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+            <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+              <img src="https://hashikake.com/wp-content/themes/cocoon-master/images/no-amp-logo.png" width="206" height="60" alt="">
+              <meta itemprop="url" content="https://hashikake.com/wp-content/themes/cocoon-master/images/no-amp-logo.png">
+              <meta itemprop="width" content="206">
+              <meta itemprop="height" content="60">
+            </div>
+            <div itemprop="name">ハシカケ-実現したいことから学べるプログラミングサイト</div>
+        </div>
+      </footer>
+
+    </article>
+
+
+<div class="under-entry-content">
+  <aside id="related-entries" class="related-entries rect-entry-card">
+  <h2 class="related-entry-heading">
+    <span class="related-entry-main-heading main-caption">
+      関連記事    </span>
+      </h2>
+  <div class="related-list">
+                 <a href="https://hashikake.com/python_dictionary" class="related-entry-card-wrap a-wrap border-element cf" title="Pythonの辞書（dictionary）について詳しく解説">
+<article class="related-entry-card e-card cf">
+
+  <figure class="related-entry-card-thumb card-thumb e-card-thumb">
+        <img width="160" height="90" src="https://hashikake.com/wp-content/uploads/2019/08/shutterstock_392723320_black-160x90.jpg" class="related-entry-card-thumb-image card-thumb-image wp-post-image" alt="" srcset="https://hashikake.com/wp-content/uploads/2019/08/shutterstock_392723320_black-160x90.jpg 160w, https://hashikake.com/wp-content/uploads/2019/08/shutterstock_392723320_black-300x169.jpg 300w, https://hashikake.com/wp-content/uploads/2019/08/shutterstock_392723320_black-120x68.jpg 120w, https://hashikake.com/wp-content/uploads/2019/08/shutterstock_392723320_black-320x180.jpg 320w, https://hashikake.com/wp-content/uploads/2019/08/shutterstock_392723320_black.jpg 760w" sizes="(max-width: 160px) 100vw, 160px" />        <span class="cat-label cat-label-2">Python</span>  </figure><!-- /.related-entry-thumb -->
+
+  <div class="related-entry-card-content card-content e-card-content">
+    <h3 class="related-entry-card-title card-title e-card-title">
+      Pythonの辞書（dictionary）について詳しく解説    </h3>
+        <div class="related-entry-card-snippet card-snippet e-card-snippet">
+      Pythonには辞書（dictionary）というデータ型があります。この辞書はdict型オブジェクトと言われることもあります。
+{&quot;apple&quot;:1, &quot;orange&quot;:2, &quot;banana&quot;:3}
+定義としてはkey（キー）とvalue...    </div>
+        <div class="related-entry-card-meta card-meta e-card-meta">
+      <div class="related-entry-card-info e-card-info">
+                              </div>
+    </div>
+
+  </div><!-- /.related-entry-card-content -->
+
+
+
+</article><!-- /.related-entry-card -->
+</a><!-- /.related-entry-card-wrap -->
+           <a href="https://hashikake.com/python-wordpresspost" class="related-entry-card-wrap a-wrap border-element cf" title="PythonでWordPressに複数の記事を自動投稿してくれるプログラム">
+<article class="related-entry-card e-card cf">
+
+  <figure class="related-entry-card-thumb card-thumb e-card-thumb">
+        <img width="160" height="90" src="https://hashikake.com/wp-content/uploads/2019/06/posts_white-160x90.jpg" class="related-entry-card-thumb-image card-thumb-image wp-post-image" alt="" srcset="https://hashikake.com/wp-content/uploads/2019/06/posts_white-160x90.jpg 160w, https://hashikake.com/wp-content/uploads/2019/06/posts_white-120x68.jpg 120w, https://hashikake.com/wp-content/uploads/2019/06/posts_white-320x180.jpg 320w" sizes="(max-width: 160px) 100vw, 160px" />        <span class="cat-label cat-label-2">Python</span>  </figure><!-- /.related-entry-thumb -->
+
+  <div class="related-entry-card-content card-content e-card-content">
+    <h3 class="related-entry-card-title card-title e-card-title">
+      PythonでWordPressに複数の記事を自動投稿してくれるプログラム    </h3>
+        <div class="related-entry-card-snippet card-snippet e-card-snippet">
+      今回のPythonスクリプトは指定したフォルダに入れたテキストファイルのWordPressへの複数の記事の投稿を自動で一括で行ってくれるプログラムです。
+
+このスクリプトがあれば、複数の記事の一括投稿もわずか3秒程度でできるので、自分で...    </div>
+        <div class="related-entry-card-meta card-meta e-card-meta">
+      <div class="related-entry-card-info e-card-info">
+                              </div>
+    </div>
+
+  </div><!-- /.related-entry-card-content -->
+
+
+
+</article><!-- /.related-entry-card -->
+</a><!-- /.related-entry-card-wrap -->
+           <a href="https://hashikake.com/subprocess" class="related-entry-card-wrap a-wrap border-element cf" title="Pythonのsubprocessモジュールでいつも使うファイル・フォルダを自動で開くプログラム">
+<article class="related-entry-card e-card cf">
+
+  <figure class="related-entry-card-thumb card-thumb e-card-thumb">
+        <img width="160" height="90" src="https://hashikake.com/wp-content/uploads/2020/04/test2_black-160x90.jpg" class="related-entry-card-thumb-image card-thumb-image wp-post-image" alt="" srcset="https://hashikake.com/wp-content/uploads/2020/04/test2_black-160x90.jpg 160w, https://hashikake.com/wp-content/uploads/2020/04/test2_black-120x68.jpg 120w, https://hashikake.com/wp-content/uploads/2020/04/test2_black-320x180.jpg 320w" sizes="(max-width: 160px) 100vw, 160px" />        <span class="cat-label cat-label-2">Python</span>  </figure><!-- /.related-entry-thumb -->
+
+  <div class="related-entry-card-content card-content e-card-content">
+    <h3 class="related-entry-card-title card-title e-card-title">
+      Pythonのsubprocessモジュールでいつも使うファイル・フォルダを自動で開くプログラム    </h3>
+        <div class="related-entry-card-snippet card-snippet e-card-snippet">
+      いつも使うアプリケーションをPythonから起動したい
+
+そんな時はPythonのsubprocessモジュールを使うと便利です。
+
+subprocessモジュールのPopen()関数では、Pythonから他のアプリケーションを実行...    </div>
+        <div class="related-entry-card-meta card-meta e-card-meta">
+      <div class="related-entry-card-info e-card-info">
+                              </div>
+    </div>
+
+  </div><!-- /.related-entry-card-content -->
+
+
+
+</article><!-- /.related-entry-card -->
+</a><!-- /.related-entry-card-wrap -->
+           <a href="https://hashikake.com/python_if" class="related-entry-card-wrap a-wrap border-element cf" title="Pythonのif文とif-else文を基礎から理解する">
+<article class="related-entry-card e-card cf">
+
+  <figure class="related-entry-card-thumb card-thumb e-card-thumb">
+        <img width="160" height="90" src="https://hashikake.com/wp-content/uploads/2019/07/shutterstock_528498295_black-1-160x90.jpg" class="related-entry-card-thumb-image card-thumb-image wp-post-image" alt="" srcset="https://hashikake.com/wp-content/uploads/2019/07/shutterstock_528498295_black-1-160x90.jpg 160w, https://hashikake.com/wp-content/uploads/2019/07/shutterstock_528498295_black-1-300x169.jpg 300w, https://hashikake.com/wp-content/uploads/2019/07/shutterstock_528498295_black-1-120x68.jpg 120w, https://hashikake.com/wp-content/uploads/2019/07/shutterstock_528498295_black-1-320x180.jpg 320w, https://hashikake.com/wp-content/uploads/2019/07/shutterstock_528498295_black-1.jpg 760w" sizes="(max-width: 160px) 100vw, 160px" />        <span class="cat-label cat-label-2">Python</span>  </figure><!-- /.related-entry-thumb -->
+
+  <div class="related-entry-card-content card-content e-card-content">
+    <h3 class="related-entry-card-title card-title e-card-title">
+      Pythonのif文とif-else文を基礎から理解する    </h3>
+        <div class="related-entry-card-snippet card-snippet e-card-snippet">
+      「Pythonで、特にif文の使い方がイマイチ理解できていない…もっと核心的なところから詳しく解説してほしい！」
+本記事は、こんな悩みを解決する内容です。
+if文は「制御構文」と言われる、記述することでプログラムの動きをコントロールする構文...    </div>
+        <div class="related-entry-card-meta card-meta e-card-meta">
+      <div class="related-entry-card-info e-card-info">
+                              </div>
+    </div>
+
+  </div><!-- /.related-entry-card-content -->
+
+
+
+</article><!-- /.related-entry-card -->
+</a><!-- /.related-entry-card-wrap -->
+           <a href="https://hashikake.com/python_queue" class="related-entry-card-wrap a-wrap border-element cf" title="Pythonのqueueモジュールについての詳細解説">
+<article class="related-entry-card e-card cf">
+
+  <figure class="related-entry-card-thumb card-thumb e-card-thumb">
+        <img width="160" height="90" src="https://hashikake.com/wp-content/uploads/2019/08/shutterstock_1408670642_white-160x90.jpg" class="related-entry-card-thumb-image card-thumb-image wp-post-image" alt="" srcset="https://hashikake.com/wp-content/uploads/2019/08/shutterstock_1408670642_white-160x90.jpg 160w, https://hashikake.com/wp-content/uploads/2019/08/shutterstock_1408670642_white-300x169.jpg 300w, https://hashikake.com/wp-content/uploads/2019/08/shutterstock_1408670642_white-120x68.jpg 120w, https://hashikake.com/wp-content/uploads/2019/08/shutterstock_1408670642_white-320x180.jpg 320w, https://hashikake.com/wp-content/uploads/2019/08/shutterstock_1408670642_white.jpg 760w" sizes="(max-width: 160px) 100vw, 160px" />        <span class="cat-label cat-label-2">Python</span>  </figure><!-- /.related-entry-thumb -->
+
+  <div class="related-entry-card-content card-content e-card-content">
+    <h3 class="related-entry-card-title card-title e-card-title">
+      Pythonのqueueモジュールについての詳細解説    </h3>
+        <div class="related-entry-card-snippet card-snippet e-card-snippet">
+      Pythonのqueueモジュールは、データの挿入や取り出しを、指定する順番で可能にするライブラリです。
+queueモジュールには、取り出す順番の異なる3種類のクラスがまとめられています。
+
+queueモジュールはPythonの標準ライブラ...    </div>
+        <div class="related-entry-card-meta card-meta e-card-meta">
+      <div class="related-entry-card-info e-card-info">
+                              </div>
+    </div>
+
+  </div><!-- /.related-entry-card-content -->
+
+
+
+</article><!-- /.related-entry-card -->
+</a><!-- /.related-entry-card-wrap -->
+           <a href="https://hashikake.com/RegEx" class="related-entry-card-wrap a-wrap border-element cf" title="Pythonの正規表現ではじめに覚えるべき3大パターン">
+<article class="related-entry-card e-card cf">
+
+  <figure class="related-entry-card-thumb card-thumb e-card-thumb">
+        <img width="160" height="90" src="https://hashikake.com/wp-content/uploads/2020/04/3394_black-160x90.jpg" class="related-entry-card-thumb-image card-thumb-image wp-post-image" alt="" srcset="https://hashikake.com/wp-content/uploads/2020/04/3394_black-160x90.jpg 160w, https://hashikake.com/wp-content/uploads/2020/04/3394_black-120x68.jpg 120w, https://hashikake.com/wp-content/uploads/2020/04/3394_black-320x180.jpg 320w" sizes="(max-width: 160px) 100vw, 160px" />        <span class="cat-label cat-label-2">Python</span>  </figure><!-- /.related-entry-thumb -->
+
+  <div class="related-entry-card-content card-content e-card-content">
+    <h3 class="related-entry-card-title card-title e-card-title">
+      Pythonの正規表現ではじめに覚えるべき3大パターン    </h3>
+        <div class="related-entry-card-snippet card-snippet e-card-snippet">
+      Pythonのプログラムを書く時のテクニックとして、正規表現という文字列の表現方法があります。
+正規表現を使うと、特定のパターンを持つ文字列を一般的に表現することができます。
+この正規表現を使えば、ある特定の文字列を文章の中から見つけたりす...    </div>
+        <div class="related-entry-card-meta card-meta e-card-meta">
+      <div class="related-entry-card-info e-card-info">
+                              </div>
+    </div>
+
+  </div><!-- /.related-entry-card-content -->
+
+
+
+</article><!-- /.related-entry-card -->
+</a><!-- /.related-entry-card-wrap -->
+    
+      </div>
+</aside>
+
+  
+  
+  <div id="pager-post-navi" class="pager-post-navi post-navi-default cf">
+<a href="https://hashikake.com/eyecatch-maker" title="Pythonで画像にテキストを入れて複数のアイキャッチを一括で作るプログラム" class="prev-post a-wrap border-element cf">
+        <figure class="prev-post-thumb card-thumb"><img width="120" height="68" src="https://hashikake.com/wp-content/uploads/2019/07/ba2ba57b620a2b80f2213f156e90214a_s-1_black-120x68.jpg" class="attachment-thumb120 size-thumb120 wp-post-image" alt="" srcset="https://hashikake.com/wp-content/uploads/2019/07/ba2ba57b620a2b80f2213f156e90214a_s-1_black-120x68.jpg 120w, https://hashikake.com/wp-content/uploads/2019/07/ba2ba57b620a2b80f2213f156e90214a_s-1_black-160x90.jpg 160w, https://hashikake.com/wp-content/uploads/2019/07/ba2ba57b620a2b80f2213f156e90214a_s-1_black-320x180.jpg 320w" sizes="(max-width: 120px) 100vw, 120px" /></figure>
+        <div class="prev-post-title">Pythonで画像にテキストを入れて複数のアイキャッチを一括で作るプログラム</div></a><a href="https://hashikake.com/python-install" title="【最新】はじめてPythonをインストールする方法、ダウントードからの手順についてOS別（Windows10, Mac）で解説" class="next-post a-wrap cf">
+        <figure class="next-post-thumb card-thumb">
+        <img width="120" height="68" src="https://hashikake.com/wp-content/uploads/2019/07/Python_install_white-120x68.jpg" class="attachment-thumb120 size-thumb120 wp-post-image" alt="" srcset="https://hashikake.com/wp-content/uploads/2019/07/Python_install_white-120x68.jpg 120w, https://hashikake.com/wp-content/uploads/2019/07/Python_install_white-160x90.jpg 160w, https://hashikake.com/wp-content/uploads/2019/07/Python_install_white-320x180.jpg 320w" sizes="(max-width: 120px) 100vw, 120px" /></figure>
+<div class="next-post-title">【最新】はじめてPythonをインストールする方法、ダウントードからの手順についてOS別（Windows10, Mac）で解説</div></a></div><!-- /.pager-post-navi -->
+
+  <!-- comment area -->
+<div id="comment-area" class="comment-area">
+  <section class="comment-list">
+    <h2 id="comments" class="comment-title">
+      コメント          </h2>
+
+      </section>
+  <aside class="comment-form">      <button id="comment-reply-btn" class="comment-btn key-btn">コメントを書き込む</button>
+    	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">コメントをどうぞ <small><a rel="nofollow" id="cancel-comment-reply-link" href="/library#respond" style="display:none;">コメントをキャンセル</a></small></h3><form action="https://hashikake.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-notes"><span id="email-notes">メールアドレスが公開されることはありません。</span> <span class="required">*</span> が付いている欄は必須項目です</p><p class="comment-form-comment"><label for="comment">コメント</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">名前 <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">メール <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">サイト</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" /></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /> <label for="wp-comment-cookies-consent">次回のコメントで使用するためブラウザーに自分の名前、メールアドレス、サイトを保存する。</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="コメントを送信" /> <input type='hidden' name='comment_post_ID' value='1669' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p></form>	</div><!-- #respond -->
+	</aside></div><!-- /.comment area -->
+
+
+  
+</div>
+
+
+
+          </main>
+
+        <div id="sidebar" class="sidebar nwa cf" role="complementary">
+
+  
+	<aside id="author_box-2" class="widget widget-sidebar widget-sidebar-standard widget_author_box"><h3 class="widget-sidebar-title widget-title">ハシカケとは？</h3>  <div class="author-box border-element no-icon cf">
+        <figure class="author-thumb">
+      <img alt='Hashikake' src='https://hashikake.com/wp-content/uploads/2019/06/hashikakepro.png' class='avatar avatar-200 photo' height='200' width='200' />    </figure>
+    <div class="author-content">
+      <div class="author-name">
+        <a href="https://hashikake.com/about">Hashikake</a>      </div>
+      <div class="author-description">
+        <p>ハシカケは、改善したい、効率化したいなどの実現したいことからプログラミングを学ぶことができるサイトです。<a href="https://hashikake.com/about">詳しくはこちら</a></p>
+
+      </div>
+            <div class="author-follows">
+        <!-- SNSページ -->
+<div class="sns-follow bc-brand-color fbc-hide sf-profile">
+
+    <div class="sns-follow-message">Hashikakeをフォローする</div>
+    <div class="sns-follow-buttons sns-buttons">
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <a href="//feedly.com/i/subscription/feed/https%3A%2F%2Fhashikake.com%2F%3Ffeed%3Drss2" class="follow-button feedly-button feedly-follow-button-sq" target="blank" title="feedlyで更新情報を購読" rel="nofollow noopener noreferrer"><span class="icon-feedly-logo"></span><span class="follow-count feedly-follow-count"></span></a>
+  
+      <a href="https://hashikake.com/?feed=rss2" class="follow-button rss-button rss-follow-button-sq" target="_blank" title="RSSで更新情報をフォロー" rel="nofollow noopener noreferrer"><span class="icon-rss-logo"></span></a>
+  
+  </div><!-- /.sns-follow-buttons -->
+
+</div><!-- /.sns-follow -->
+      </div>
+      
+    </div>
+  </div>
+</aside><aside id="search-2" class="widget widget-sidebar widget-sidebar-standard widget_search"><form class="search-box input-box" method="get" action="https://hashikake.com/">
+  <input type="text" placeholder="サイト内を検索" name="s" class="search-edit" aria-label="input">
+  <button type="submit" class="search-submit" role="button" aria-label="button"></button>
+</form>
+</aside>		<aside id="recent-posts-2" class="widget widget-sidebar widget-sidebar-standard widget_recent_entries">		<h3 class="widget-sidebar-title widget-title">最近の投稿</h3>		<ul>
+											<li>
+					<a href="https://hashikake.com/import">Pythonのパッケージやモジュールのimportをしっかり理解する</a>
+									</li>
+											<li>
+					<a href="https://hashikake.com/make_function">Pythonで作ったコードを関数にする流れ</a>
+									</li>
+											<li>
+					<a href="https://hashikake.com/Stock_Price">Webサイトから株価をスクレイピングしてExcelファイルに記録するプログラム</a>
+									</li>
+											<li>
+					<a href="https://hashikake.com/openpyxl">PythonでExcelファイルを編集できるOpenpyxlでワークブック・ワークシート・セルを操作する方法</a>
+									</li>
+											<li>
+					<a href="https://hashikake.com/subprocess">Pythonのsubprocessモジュールでいつも使うファイル・フォルダを自動で開くプログラム</a>
+									</li>
+					</ul>
+		</aside><aside id="categories-2" class="widget widget-sidebar widget-sidebar-standard widget_categories"><h3 class="widget-sidebar-title widget-title">カテゴリー</h3>		<ul>
+				<li class="cat-item cat-item-2"><a class="cf" href="https://hashikake.com/?cat=2">Python</a>
+</li>
+	<li class="cat-item cat-item-15"><a class="cf" href="https://hashikake.com/?cat=15">機械学習</a>
+</li>
+		</ul>
+			</aside><aside id="tag_cloud-2" class="widget widget-sidebar widget-sidebar-standard widget_tag_cloud"><h3 class="widget-sidebar-title widget-title">タグで検索</h3><div class="tagcloud"><a href="https://hashikake.com/?tag=python" class="tag-cloud-link tag-link-4 tag-link-position-1" aria-label="Python (4個の項目)"><span class="tag-caption">Python</span></a>
+<a href="https://hashikake.com/?tag=computer-vision" class="tag-cloud-link tag-link-14 tag-link-position-2" aria-label="Computer Vision (2個の項目)"><span class="tag-caption">Computer Vision</span></a>
+<a href="https://hashikake.com/?tag=%e7%94%bb%e5%83%8f%e8%aa%8d%e8%ad%98" class="tag-cloud-link tag-link-13 tag-link-position-3" aria-label="画像認識 (2個の項目)"><span class="tag-caption">画像認識</span></a>
+<a href="https://hashikake.com/?tag=api" class="tag-cloud-link tag-link-12 tag-link-position-4" aria-label="API (2個の項目)"><span class="tag-caption">API</span></a>
+<a href="https://hashikake.com/?tag=ai" class="tag-cloud-link tag-link-11 tag-link-position-5" aria-label="AI (2個の項目)"><span class="tag-caption">AI</span></a>
+<a href="https://hashikake.com/?tag=%e3%83%87%e3%82%a3%e3%83%bc%e3%83%97%e3%83%a9%e3%83%bc%e3%83%8b%e3%83%b3%e3%82%b0" class="tag-cloud-link tag-link-17 tag-link-position-6" aria-label="ディープラーニング (1個の項目)"><span class="tag-caption">ディープラーニング</span></a>
+<a href="https://hashikake.com/?tag=%e6%a9%9f%e6%a2%b0%e5%ad%a6%e7%bf%92" class="tag-cloud-link tag-link-16 tag-link-position-7" aria-label="機械学習 (1個の項目)"><span class="tag-caption">機械学習</span></a>
+<a href="https://hashikake.com/?tag=%e8%87%aa%e5%8b%95%e6%8a%95%e7%a8%bf" class="tag-cloud-link tag-link-10 tag-link-position-8" aria-label="自動投稿 (1個の項目)"><span class="tag-caption">自動投稿</span></a>
+<a href="https://hashikake.com/?tag=wordpress" class="tag-cloud-link tag-link-7 tag-link-position-9" aria-label="WordPress (1個の項目)"><span class="tag-caption">WordPress</span></a>
+<a href="https://hashikake.com/?tag=%e8%a8%98%e4%ba%8b%e7%b7%a8%e9%9b%86" class="tag-cloud-link tag-link-6 tag-link-position-10" aria-label="記事編集 (1個の項目)"><span class="tag-caption">記事編集</span></a>
+<a href="https://hashikake.com/?tag=%e3%82%b9%e3%82%af%e3%83%ac%e3%82%a4%e3%83%94%e3%83%b3%e3%82%b0" class="tag-cloud-link tag-link-3 tag-link-position-11" aria-label="スクレイピング (1個の項目)"><span class="tag-caption">スクレイピング</span></a>
+<a href="https://hashikake.com/?tag=%e7%bd%ae%e6%8f%9b" class="tag-cloud-link tag-link-5 tag-link-position-12" aria-label="置換 (1個の項目)"><span class="tag-caption">置換</span></a></div>
+</aside><aside id="recent-comments-2" class="widget widget-sidebar widget-sidebar-standard widget_recent_comments"><h3 class="widget-sidebar-title widget-title">最近のコメント</h3><ul id="recentcomments"></ul></aside>
+  
+    <div id="sidebar-scroll" class="sidebar-scroll">
+    <aside id="toc-2" class="widget widget-sidebar widget-sidebar-scroll widget_toc"><h3 class="widget-sidebar-scroll-title widget-title">目次</h3>        <div class="toc-widget-box">
+          
+  <div class="toc tnt-number toc-center border-element"><label class="toc-title">目次</label>
+    <div class="toc-content">
+    <ol class="toc-list open"><li><a href="#toc1" tabindex="0">標準ライブラリと外部ライブラリ</a><ol><li><a href="#toc2" tabindex="0">外部ライブラリを使うためには最初にinstallが必要</a></li><li><a href="#toc3" tabindex="0">外部ライブラリの一覧を調べる方法</a></li></ol></li><li><a href="#toc4" tabindex="0">ライブラリをプログラム内で読み込むためには、importが必要</a></li><li><a href="#toc5" tabindex="0">とても便利な外部ライブラリ</a><ol><li><a href="#toc6" tabindex="0">iclawler</a></li><li><a href="#toc7" tabindex="0">PyCaret</a></li><li><a href="#toc8" tabindex="0">pickle</a></li><li><a href="#toc9" tabindex="0">pytube</a></li></ol></li><li><a href="#toc10" tabindex="0">システムに関するライブラリpipとsys</a><ol><li><a href="#toc11" tabindex="0">pip</a></li><li><a href="#toc12" tabindex="0">sys</a></li></ol></li><li><a href="#toc13" tabindex="0">日付についてのライブラリdatetime、dateutil、calendar</a><ol><li><a href="#toc14" tabindex="0">datetime</a></li><li><a href="#toc15" tabindex="0">dateutil</a></li><li><a href="#toc16" tabindex="0">calendar</a></li></ol></li><li><a href="#toc17" tabindex="0">数学系のライブラリmath、Numpy、matplotlib</a><ol><li><a href="#toc18" tabindex="0">math</a></li><li><a href="#toc19" tabindex="0">Numpy</a></li><li><a href="#toc20" tabindex="0">matplotlib</a></li></ol></li><li><a href="#toc21" tabindex="0">統計・データ処理についてのライブラリpandas、sklearn</a><ol><li><a href="#toc22" tabindex="0">pandas</a></li><li><a href="#toc23" tabindex="0">sklearn</a></li></ol></li><li><a href="#toc24" tabindex="0">画像処理ライブラリPillow、OpenCV</a><ol><li><a href="#toc25" tabindex="0">Pillow</a></li><li><a href="#toc26" tabindex="0">OpenCV</a></li><li><a href="#toc27" tabindex="0">TWINT</a></li></ol></li><li><a href="#toc28" tabindex="0">まとめ</a></li></ol>
+    </div>
+  </div>        </div>
+        </aside>      </div>
+  
+</div>
+
+      </div>
+
+    </div>
+
+    
+    
+    
+    <footer id="footer" class="footer footer-container nwa" itemscope itemtype="https://schema.org/WPFooter">
+
+      <div id="footer-in" class="footer-in wrap cf">
+
+        
+        
+        
+<div class="footer-bottom fdt-logo fnm-text-width cf">
+  <div class="footer-bottom-logo">
+    <div class="logo logo-footer logo-text"><a href="https://hashikake.com" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text" itemprop="name about">ハシカケ-実現したいことから学べるプログラミングサイト</span></a></div>  </div>
+
+  <div class="footer-bottom-content">
+     <nav id="navi-footer" class="navi-footer">
+  <div id="navi-footer-in" class="navi-footer-in">
+      </div>
+</nav>
+
+    <div class="source-org copyright">© 2019 ハシカケ-実現したいことから学べるプログラミングサイト.</div>
+  </div>
+
+</div>
+
+      </div>
+
+    </footer>
+
+  </div>
+
+  <div id="go-to-top" class="go-to-top">
+      <a class="go-to-top-button go-to-top-common go-to-top-hide go-to-top-button-icon-font"><span class="fa fa-angle-double-up"></span></a>
+  </div>
+
+  
+  
+
+<ul class="mobile-menu-buttons">
+
+  
+
+  
+<!-- ホームボタン -->
+<li class="home-menu-button menu-button">
+  <a href="https://hashikake.com" class="menu-button-in">
+    <div class="home-menu-icon menu-icon"></div>
+    <div class="home-menu-caption menu-caption">ホーム</div>
+  </a>
+</li>
+
+  
+<!-- 検索ボタン -->
+  <!-- 検索ボタン -->
+  <li class="search-menu-button menu-button">
+    <input id="search-menu-input" type="checkbox" class="display-none">
+    <label id="search-menu-open" class="menu-open menu-button-in" for="search-menu-input">
+      <div class="search-menu-icon menu-icon"></div>
+      <div class="search-menu-caption menu-caption">検索</div>
+    </label>
+    <label class="display-none" id="search-menu-close" for="search-menu-input"></label>
+    <div id="search-menu-content" class="search-menu-content">
+      <form class="search-box input-box" method="get" action="https://hashikake.com/">
+  <input type="text" placeholder="サイト内を検索" name="s" class="search-edit" aria-label="input">
+  <button type="submit" class="search-submit" role="button" aria-label="button"></button>
+</form>
+    </div>
+  </li>
+
+  
+<!-- トップボタン -->
+<li class="top-menu-button menu-button">
+  <a class="go-to-top-common top-menu-a menu-button-in">
+    <div class="top-menu-icon menu-icon"></div>
+    <div class="top-menu-caption menu-caption">トップ</div>
+  </a>
+</li>
+
+  
+<!-- サイドバーボタン -->
+  <li class="sidebar-menu-button menu-button">
+    <input id="sidebar-menu-input" type="checkbox" class="display-none">
+    <label id="sidebar-menu-open" class="menu-open menu-button-in" for="sidebar-menu-input">
+      <div class="sidebar-menu-icon menu-icon"></div>
+      <div class="sidebar-menu-caption menu-caption">サイドバー</div>
+    </label>
+    <label class="display-none" id="sidebar-menu-close" for="sidebar-menu-input"></label>
+    <div id="sidebar-menu-content" class="sidebar-menu-content menu-content">
+      <label class="sidebar-menu-close-button menu-close-button" for="sidebar-menu-input"></label>
+      <div id="slide-in-sidebar" class="sidebar nwa cf" role="complementary">
+
+  
+	<aside id="slide-in-author_box-2" class="widget widget-sidebar widget-sidebar-standard widget_author_box"><h3 class="widget-sidebar-title widget-title">ハシカケとは？</h3>  <div class="author-box border-element no-icon cf">
+        <figure class="author-thumb">
+      <img alt='Hashikake' src='https://hashikake.com/wp-content/uploads/2019/06/hashikakepro.png' class='avatar avatar-200 photo' height='200' width='200' />    </figure>
+    <div class="author-content">
+      <div class="author-name">
+        <a href="https://hashikake.com/about">Hashikake</a>      </div>
+      <div class="author-description">
+        <p>ハシカケは、改善したい、効率化したいなどの実現したいことからプログラミングを学ぶことができるサイトです。<a href="https://hashikake.com/about">詳しくはこちら</a></p>
+
+      </div>
+            <div class="author-follows">
+        <!-- SNSページ -->
+<div class="sns-follow bc-brand-color fbc-hide sf-profile">
+
+    <div class="sns-follow-message">Hashikakeをフォローする</div>
+    <div class="sns-follow-buttons sns-buttons">
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <a href="//feedly.com/i/subscription/feed/https%3A%2F%2Fhashikake.com%2F%3Ffeed%3Drss2" class="follow-button feedly-button feedly-follow-button-sq" target="blank" title="feedlyで更新情報を購読" rel="nofollow noopener noreferrer"><span class="icon-feedly-logo"></span><span class="follow-count feedly-follow-count"></span></a>
+  
+      <a href="https://hashikake.com/?feed=rss2" class="follow-button rss-button rss-follow-button-sq" target="_blank" title="RSSで更新情報をフォロー" rel="nofollow noopener noreferrer"><span class="icon-rss-logo"></span></a>
+  
+  </div><!-- /.sns-follow-buttons -->
+
+</div><!-- /.sns-follow -->
+      </div>
+      
+    </div>
+  </div>
+</aside><aside id="slide-in-search-2" class="widget widget-sidebar widget-sidebar-standard widget_search"><form class="search-box input-box" method="get" action="https://hashikake.com/">
+  <input type="text" placeholder="サイト内を検索" name="s" class="search-edit" aria-label="input">
+  <button type="submit" class="search-submit" role="button" aria-label="button"></button>
+</form>
+</aside>		<aside id="slide-in-recent-posts-2" class="widget widget-sidebar widget-sidebar-standard widget_recent_entries">		<h3 class="widget-sidebar-title widget-title">最近の投稿</h3>		<ul>
+											<li>
+					<a href="https://hashikake.com/import">Pythonのパッケージやモジュールのimportをしっかり理解する</a>
+									</li>
+											<li>
+					<a href="https://hashikake.com/make_function">Pythonで作ったコードを関数にする流れ</a>
+									</li>
+											<li>
+					<a href="https://hashikake.com/Stock_Price">Webサイトから株価をスクレイピングしてExcelファイルに記録するプログラム</a>
+									</li>
+											<li>
+					<a href="https://hashikake.com/openpyxl">PythonでExcelファイルを編集できるOpenpyxlでワークブック・ワークシート・セルを操作する方法</a>
+									</li>
+											<li>
+					<a href="https://hashikake.com/subprocess">Pythonのsubprocessモジュールでいつも使うファイル・フォルダを自動で開くプログラム</a>
+									</li>
+					</ul>
+		</aside><aside id="slide-in-categories-2" class="widget widget-sidebar widget-sidebar-standard widget_categories"><h3 class="widget-sidebar-title widget-title">カテゴリー</h3>		<ul>
+				<li class="cat-item cat-item-2"><a class="cf" href="https://hashikake.com/?cat=2">Python</a>
+</li>
+	<li class="cat-item cat-item-15"><a class="cf" href="https://hashikake.com/?cat=15">機械学習</a>
+</li>
+		</ul>
+			</aside><aside id="slide-in-tag_cloud-2" class="widget widget-sidebar widget-sidebar-standard widget_tag_cloud"><h3 class="widget-sidebar-title widget-title">タグで検索</h3><div class="tagcloud"><a href="https://hashikake.com/?tag=python" class="tag-cloud-link tag-link-4 tag-link-position-1" aria-label="Python (4個の項目)"><span class="tag-caption">Python</span></a>
+<a href="https://hashikake.com/?tag=computer-vision" class="tag-cloud-link tag-link-14 tag-link-position-2" aria-label="Computer Vision (2個の項目)"><span class="tag-caption">Computer Vision</span></a>
+<a href="https://hashikake.com/?tag=%e7%94%bb%e5%83%8f%e8%aa%8d%e8%ad%98" class="tag-cloud-link tag-link-13 tag-link-position-3" aria-label="画像認識 (2個の項目)"><span class="tag-caption">画像認識</span></a>
+<a href="https://hashikake.com/?tag=api" class="tag-cloud-link tag-link-12 tag-link-position-4" aria-label="API (2個の項目)"><span class="tag-caption">API</span></a>
+<a href="https://hashikake.com/?tag=ai" class="tag-cloud-link tag-link-11 tag-link-position-5" aria-label="AI (2個の項目)"><span class="tag-caption">AI</span></a>
+<a href="https://hashikake.com/?tag=%e3%83%87%e3%82%a3%e3%83%bc%e3%83%97%e3%83%a9%e3%83%bc%e3%83%8b%e3%83%b3%e3%82%b0" class="tag-cloud-link tag-link-17 tag-link-position-6" aria-label="ディープラーニング (1個の項目)"><span class="tag-caption">ディープラーニング</span></a>
+<a href="https://hashikake.com/?tag=%e6%a9%9f%e6%a2%b0%e5%ad%a6%e7%bf%92" class="tag-cloud-link tag-link-16 tag-link-position-7" aria-label="機械学習 (1個の項目)"><span class="tag-caption">機械学習</span></a>
+<a href="https://hashikake.com/?tag=%e8%87%aa%e5%8b%95%e6%8a%95%e7%a8%bf" class="tag-cloud-link tag-link-10 tag-link-position-8" aria-label="自動投稿 (1個の項目)"><span class="tag-caption">自動投稿</span></a>
+<a href="https://hashikake.com/?tag=wordpress" class="tag-cloud-link tag-link-7 tag-link-position-9" aria-label="WordPress (1個の項目)"><span class="tag-caption">WordPress</span></a>
+<a href="https://hashikake.com/?tag=%e8%a8%98%e4%ba%8b%e7%b7%a8%e9%9b%86" class="tag-cloud-link tag-link-6 tag-link-position-10" aria-label="記事編集 (1個の項目)"><span class="tag-caption">記事編集</span></a>
+<a href="https://hashikake.com/?tag=%e3%82%b9%e3%82%af%e3%83%ac%e3%82%a4%e3%83%94%e3%83%b3%e3%82%b0" class="tag-cloud-link tag-link-3 tag-link-position-11" aria-label="スクレイピング (1個の項目)"><span class="tag-caption">スクレイピング</span></a>
+<a href="https://hashikake.com/?tag=%e7%bd%ae%e6%8f%9b" class="tag-cloud-link tag-link-5 tag-link-position-12" aria-label="置換 (1個の項目)"><span class="tag-caption">置換</span></a></div>
+</aside><aside id="slide-in-recent-comments-2" class="widget widget-sidebar widget-sidebar-standard widget_recent_comments"><h3 class="widget-sidebar-title widget-title">最近のコメント</h3><ul id="slide-in-recentcomments"></ul></aside>
+  
+    <div id="slide-in-sidebar-scroll" class="sidebar-scroll">
+    <aside id="slide-in-toc-2" class="widget widget-sidebar widget-sidebar-scroll widget_toc"><h3 class="widget-sidebar-scroll-title widget-title">目次</h3>        <div class="toc-widget-box">
+          
+  <div class="toc tnt-number toc-center border-element"><label class="toc-title">目次</label>
+    <div class="toc-content">
+    <ol class="toc-list open"><li><a href="#toc1" tabindex="0">標準ライブラリと外部ライブラリ</a><ol><li><a href="#toc2" tabindex="0">外部ライブラリを使うためには最初にinstallが必要</a></li><li><a href="#toc3" tabindex="0">外部ライブラリの一覧を調べる方法</a></li></ol></li><li><a href="#toc4" tabindex="0">ライブラリをプログラム内で読み込むためには、importが必要</a></li><li><a href="#toc5" tabindex="0">とても便利な外部ライブラリ</a><ol><li><a href="#toc6" tabindex="0">iclawler</a></li><li><a href="#toc7" tabindex="0">PyCaret</a></li><li><a href="#toc8" tabindex="0">pickle</a></li><li><a href="#toc9" tabindex="0">pytube</a></li></ol></li><li><a href="#toc10" tabindex="0">システムに関するライブラリpipとsys</a><ol><li><a href="#toc11" tabindex="0">pip</a></li><li><a href="#toc12" tabindex="0">sys</a></li></ol></li><li><a href="#toc13" tabindex="0">日付についてのライブラリdatetime、dateutil、calendar</a><ol><li><a href="#toc14" tabindex="0">datetime</a></li><li><a href="#toc15" tabindex="0">dateutil</a></li><li><a href="#toc16" tabindex="0">calendar</a></li></ol></li><li><a href="#toc17" tabindex="0">数学系のライブラリmath、Numpy、matplotlib</a><ol><li><a href="#toc18" tabindex="0">math</a></li><li><a href="#toc19" tabindex="0">Numpy</a></li><li><a href="#toc20" tabindex="0">matplotlib</a></li></ol></li><li><a href="#toc21" tabindex="0">統計・データ処理についてのライブラリpandas、sklearn</a><ol><li><a href="#toc22" tabindex="0">pandas</a></li><li><a href="#toc23" tabindex="0">sklearn</a></li></ol></li><li><a href="#toc24" tabindex="0">画像処理ライブラリPillow、OpenCV</a><ol><li><a href="#toc25" tabindex="0">Pillow</a></li><li><a href="#toc26" tabindex="0">OpenCV</a></li><li><a href="#toc27" tabindex="0">TWINT</a></li></ol></li><li><a href="#toc28" tabindex="0">まとめ</a></li></ol>
+    </div>
+  </div>        </div>
+        </aside>      </div>
+  
+</div>
+    </div>
+  </li>
+
+</ul>
+
+
+
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js?ver=1.12.4'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.4.1/jquery-migrate.min.js?ver=1.4.1'></script>
+<script src='https://hashikake.com/wp-content/themes/cocoon-master/plugins/baguettebox/dist/baguetteBox.min.js?ver=5.3.6&#038;fver=20190619020607'></script>
+<script>
+(function($){baguetteBox.run(".entry-content")})(jQuery);
+</script>
+<script src='https://hashikake.com/wp-content/themes/cocoon-master/plugins/stickyfill/dist/stickyfill.min.js?ver=5.3.6&#038;fver=20190619020607'></script>
+<script src='https://hashikake.com/wp-content/themes/cocoon-master/plugins/slick/slick.min.js?ver=5.3.6&#038;fver=20190619020607'></script>
+<script>
+(function($){$(".carousel-content").slick({dots:!0,autoplaySpeed:5000,infinite:!0,slidesToShow:6,slidesToScroll:6,responsive:[{breakpoint:1240,settings:{slidesToShow:5,slidesToScroll:5}},{breakpoint:1023,settings:{slidesToShow:4,slidesToScroll:4}},{breakpoint:834,settings:{slidesToShow:3,slidesToScroll:3}},{breakpoint:480,settings:{slidesToShow:2,slidesToScroll:2}}]})})(jQuery);
+</script>
+<script src='https://hashikake.com/wp-includes/js/comment-reply.min.js?ver=5.3.6&#038;fver=20200131023725'></script>
+<script src='https://hashikake.com/wp-content/themes/cocoon-master/javascript.js?ver=5.3.6&#038;fver=20190717102225'></script>
+<script src='https://hashikake.com/wp-content/themes/cocoon-master/js/set-event-passive.js?ver=5.3.6&#038;fver=20190619020607'></script>
+<script src='https://hashikake.com/wp-content/themes/cocoon-master/skins/skin-colors-blue/javascript.js?ver=5.3.6&#038;fver=20190619020607'></script>
+<script src='https://js.stripe.com/v3/'></script>
+<script src='https://hashikake.com/wp-content/plugins/stripe/includes/core/assets/js/simpay-polyfill.min.js?ver=2.4.1&#038;fver=20200514040101'></script>
+<script src='https://hashikake.com/wp-content/plugins/stripe/includes/core/assets/js/vendor/accounting.min.js?ver=2.4.1&#038;fver=20200514040101'></script>
+<script>
+/* <![CDATA[ */
+var spGeneral = {"strings":{"currency":"JPY","currencySymbol":"\u00a5","currencyPosition":"left","decimalSeparator":".","thousandSeparator":",","ajaxurl":"https:\/\/hashikake.com\/wp-admin\/admin-ajax.php"},"booleans":{"isZeroDecimal":true,"scriptDebug":false},"i18n":{"mediaTitle":"Insert Media","mediaButtonText":"Use Image"},"integers":{"decimalPlaces":0,"minAmount":100}};
+/* ]]> */
+</script>
+<script src='https://hashikake.com/wp-content/plugins/stripe/includes/core/assets/js/simpay-public-shared.min.js?ver=2.4.1&#038;fver=20200514040101'></script>
+<script src='https://hashikake.com/wp-includes/js/underscore.min.js?ver=1.8.3&#038;fver=20200131023726'></script>
+<script src='https://hashikake.com/wp-includes/js/backbone.min.js?ver=1.4.0&#038;fver=20200131023726'></script>
+<script>
+/* <![CDATA[ */
+var wpApiSettings = {"root":"https:\/\/hashikake.com\/index.php?rest_route=\/","nonce":"b4470d023c","versionString":"wp\/v2\/"};
+/* ]]> */
+</script>
+<script src='https://hashikake.com/wp-includes/js/api-request.min.js?ver=5.3.6&#038;fver=20200131023726'></script>
+<script src='https://hashikake.com/wp-includes/js/wp-api.min.js?ver=5.3.6&#038;fver=20200131023725'></script>
+<script>
+/* <![CDATA[ */
+var simplePayForms = [];
+/* ]]> */
+</script>
+<script src='https://hashikake.com/wp-content/plugins/stripe/includes/core/assets/js/simpay-public.min.js?ver=2.4.1&#038;fver=20200514040101'></script>
+<script src='https://hashikake.com/wp-content/plugins/enlighter/resources/enlighterjs/enlighterjs.min.js?ver=4.2&#038;fver=20200514035939'></script>
+<script>
+!function(n,o){"undefined"!=typeof EnlighterJS?(n.EnlighterJSINIT=function(){EnlighterJS.init("pre.EnlighterJSRAW", "code.EnlighterJSRAW", {"indent":-1,"ampersandCleanup":true,"linehover":true,"rawcodeDbclick":true,"textOverflow":"scroll","linenumbers":true,"theme":"droide","language":"generic","retainCssClasses":false,"collapse":false,"toolbarOuter":"","toolbarTop":"{BTN_RAW}{BTN_COPY}{BTN_WINDOW}{BTN_WEBSITE}","toolbarBottom":""})})():(o&&(o.error||o.log)||function(){})("Error: EnlighterJS resources not loaded yet!")}(window,console);
+</script>
+<!-- start Simple Custom CSS and JS -->
+<script>
+$(window).on('load', function(){
+  
+  $('.EnlighterJSWrapper').each(function(index, elem){
+    // console.log(index);
+    let $toolbar = $(this).find('.EnlighterJSToolbar');
+    $toolbar.show();
+    let html = '<button class="copy-btn" onclick="copyToClipboard('+index+')" data-index="'+index+'"><img alt="" src="https://hashikake.com/wp-content/uploads/2019/07/copy.jpg" /></button>';
+    $toolbar.prepend(html);
+
+    let code =$(this).find('pre').text();
+    $(elem).append('<textarea class="copy-textarea" id="copyTarget'+index+'">'+code+'</textarea>');
+  });
+});
+
+  
+function copyToClipboard(index) {
+  let target = 'copyTarget'+index;
+  console.log(target);
+  var copyTarget = document.getElementById(target);
+  // console.log(copyTarget);
+  copyTarget.select();
+  document.execCommand("Copy");
+  alert("コードをコピーしました");
+}</script>
+<!-- end Simple Custom CSS and JS -->
+
+            <div class="copy-info">タイトルとURLをコピーしました</div>
+  <script src="//cdn.jsdelivr.net/clipboard.js/1.5.13/clipboard.min.js"></script>
+  <script>
+  (function($){
+    var clipboard = new Clipboard('.copy-button');//clipboardで使う要素を指定
+    clipboard.on('success', function(e) {
+      $('.copy-info').fadeIn(500).delay(1000).fadeOut(500);
+
+      e.clearSelection();
+    });
+  })(jQuery);
+  </script>
+      
+
+  
+  
+  
+
+</body>
+
+</html>
